@@ -29,6 +29,8 @@ export default function Profile({ data }: { data: ProfileData }) {
     });
   };
 
+  console.log("Profile data:", data);
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -48,7 +50,8 @@ export default function Profile({ data }: { data: ProfileData }) {
               <Image
                 src={data.photo || "/placeholder.svg"}
                 alt={data.name}
-                fill
+                width="300"
+                height="300"
                 className="object-cover"
                 priority
               />
