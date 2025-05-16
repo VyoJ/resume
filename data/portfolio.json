@@ -317,12 +317,12 @@
     ]
   },
   "contact": {
-    "email": "hello@johndoe.dev",
+    "email": "hello@example.com",
     "phone": "+1 (555) 123-4567",
     "location": "San Francisco, CA",
     "availability": "Open to freelance and full-time opportunities",
     "socialLinks": {
-      "github": "https://example.com/johndoe",
+      "github": "https://github.com/VyoJ",
       "linkedin": "https://example.com/",
       "twitter": "https://example.com/"
     }
