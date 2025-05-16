@@ -2,6 +2,8 @@
 
 This is a clean, minimalistic, and SEO-friendly personal portfolio website built with Next.js and Tailwind CSS. It's designed to be easily customizable to showcase your own resume and portfolio.
 
+![image](https://github.com/user-attachments/assets/004441b9-15ac-4560-a96a-3a9574055c75)
+
 ## Features
 
 - **Clean and Minimalist Design:** Focuses on content and readability.
