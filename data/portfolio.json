@@ -5,14 +5,14 @@
     "summary": "Experienced Full Stack Developer with 5+ years of expertise in building scalable web applications using React, Node.js, and modern cloud technologies. Passionate about creating elegant solutions to complex problems with a focus on performance and user experience.",
     "bio": "I'm a developer who loves turning complex problems into elegant, efficient solutions. My journey in tech started when I built my first website at 15, and I've been hooked ever since. I believe in writing clean, maintainable code and creating applications that not only work flawlessly but also provide exceptional user experiences.",
     "location": "San Francisco, CA",
-    "email": "hello@johndoe.dev",
+    "email": "hello@example.com",
     "phone": "+1 (555) 123-4567",
-    "website": "https://johndoe.dev",
+    "website": "https://demo-resume-optimised.vercel.app/",
     "photo": "/og-image.jpg",
     "socialLinks": {
-      "github": "https://github.com/johndoe",
-      "linkedin": "https://linkedin.com/in/johndoe",
-      "twitter": "https://twitter.com/johndoe"
+      "github": "https://github.com/VyoJ",
+      "linkedin": "https://example.com/",
+      "twitter": "https://example.com/"
     }
   },
   "experience": [
@@ -29,7 +29,13 @@
         "Led a team of 5 developers to successfully deliver 3 major product releases",
         "Mentored junior developers and conducted code reviews to maintain code quality"
       ],
-      "technologies": ["React", "TypeScript", "Next.js", "GraphQL", "Tailwind CSS"]
+      "technologies": [
+        "React",
+        "TypeScript",
+        "Next.js",
+        "GraphQL",
+        "Tailwind CSS"
+      ]
     },
     {
       "company": "Digital Solutions Ltd.",
@@ -44,7 +50,13 @@
         "Designed and developed RESTful APIs consumed by mobile and web applications",
         "Collaborated with designers and product managers to deliver high-quality user experiences"
       ],
-      "technologies": ["React", "Node.js", "Express", "MongoDB", "AWS"]
+      "technologies": [
+        "React",
+        "Node.js",
+        "Express",
+        "MongoDB",
+        "AWS"
+      ]
     },
     {
       "company": "WebCraft Agency",
@@ -59,7 +71,13 @@
         "Assisted senior developers in troubleshooting and debugging complex issues",
         "Participated in client meetings to gather requirements and present solutions"
       ],
-      "technologies": ["JavaScript", "HTML", "CSS", "jQuery", "PHP"]
+      "technologies": [
+        "JavaScript",
+        "HTML",
+        "CSS",
+        "jQuery",
+        "PHP"
+      ]
     }
   ],
   "education": [
@@ -109,62 +127,120 @@
     },
     {
       "category": "Backend",
-      "items": ["Node.js", "Express", "Python", "Django", "RESTful APIs", "GraphQL", "Serverless"]
+      "items": [
+        "Node.js",
+        "Express",
+        "Python",
+        "Django",
+        "RESTful APIs",
+        "GraphQL",
+        "Serverless"
+      ]
     },
     {
       "category": "Database",
-      "items": ["MongoDB", "PostgreSQL", "MySQL", "Firebase", "Redis", "Prisma"]
+      "items": [
+        "MongoDB",
+        "PostgreSQL",
+        "MySQL",
+        "Firebase",
+        "Redis",
+        "Prisma"
+      ]
     },
     {
       "category": "DevOps",
-      "items": ["Docker", "Kubernetes", "CI/CD", "AWS", "Vercel", "Netlify", "GitHub Actions"]
+      "items": [
+        "Docker",
+        "Kubernetes",
+        "CI/CD",
+        "AWS",
+        "Vercel",
+        "Netlify",
+        "GitHub Actions"
+      ]
     },
     {
       "category": "Tools",
-      "items": ["Git", "GitHub", "VS Code", "Figma", "Postman", "Jest", "Cypress", "Storybook"]
+      "items": [
+        "Git",
+        "GitHub",
+        "VS Code",
+        "Figma",
+        "Postman",
+        "Jest",
+        "Cypress",
+        "Storybook"
+      ]
     }
   ],
   "projects": [
     {
       "title": "E-Commerce Platform",
       "description": "A full-featured e-commerce platform with product management, cart functionality, and payment processing.",
-      "technologies": ["Next.js", "TypeScript", "Stripe", "Tailwind CSS", "Prisma", "PostgreSQL"],
-      "link": "https://ecommerce-example.com",
-      "github": "https://github.com/johndoe/ecommerce",
+      "technologies": [
+        "Next.js",
+        "TypeScript",
+        "Stripe",
+        "Tailwind CSS",
+        "Prisma",
+        "PostgreSQL"
+      ],
+      "link": "https://example.com/",
+      "github": "https://example.com/",
       "image": "/placeholder.svg?height=200&width=300",
       "featured": true
     },
     {
       "title": "Task Management App",
       "description": "A collaborative task management application with real-time updates and team collaboration features.",
-      "technologies": ["React", "Firebase", "Material UI", "Redux"],
-      "link": "https://taskapp-example.com",
-      "github": "https://github.com/johndoe/taskapp",
+      "technologies": [
+        "React",
+        "Firebase",
+        "Material UI",
+        "Redux"
+      ],
+      "link": "https://example.com/",
+      "github": "https://example.com/",
       "image": "/placeholder.svg?height=200&width=300",
       "featured": true
     },
     {
       "title": "Finance Dashboard",
       "description": "An interactive dashboard for tracking personal finances, with data visualization and budget planning tools.",
-      "technologies": ["React", "D3.js", "Node.js", "Express", "MongoDB"],
-      "link": "https://finance-example.com",
-      "github": "https://github.com/johndoe/finance-dashboard",
+      "technologies": [
+        "React",
+        "D3.js",
+        "Node.js",
+        "Express",
+        "MongoDB"
+      ],
+      "link": "https://example.com/",
+      "github": "https://example.com/",
       "image": "/placeholder.svg?height=200&width=300",
       "featured": true
     },
     {
       "title": "Weather App",
       "description": "A weather application that provides real-time weather data and forecasts for locations worldwide.",
-      "technologies": ["React", "OpenWeather API", "Styled Components"],
-      "github": "https://github.com/johndoe/weather-app",
+      "technologies": [
+        "React",
+        "OpenWeather API",
+        "Styled Components"
+      ],
+      "github": "https://example.com/",
       "featured": false
     },
     {
       "title": "Portfolio Website",
       "description": "A personal portfolio website showcasing my projects and skills.",
-      "technologies": ["Next.js", "Tailwind CSS", "Framer Motion"],
-      "link": "https://johndoe.dev",
-      "github": "https://github.com/johndoe/portfolio",
+      "technologies": [
+        "Next.js",
+        "Tailwind CSS",
+        "Framer Motion"
+      ],
+      "link": "https://example.com/",
+      "github": "https://example.com/",
       "featured": false
     }
   ],
@@ -199,21 +275,21 @@
       "title": "Optimizing React Applications for Performance",
       "publisher": "Medium",
       "date": "2022-07",
-      "link": "https://medium.com/article1",
+      "link": "https://example.com/article1",
       "description": "A comprehensive guide to optimizing React applications for better performance and user experience."
     },
     {
       "title": "Building Scalable APIs with Node.js and Express",
       "publisher": "Dev.to",
       "date": "2021-11",
-      "link": "https://dev.to/article2",
+      "link": "https://example.com/article2",
       "description": "Best practices for building scalable and maintainable APIs using Node.js and Express."
     },
     {
       "title": "Introduction to TypeScript for JavaScript Developers",
       "publisher": "Hashnode",
       "date": "2021-03",
-      "link": "https://hashnode.com/article3",
+      "link": "https://example.com/article3",
       "description": "A beginner-friendly guide to TypeScript for JavaScript developers."
     }
   ],
@@ -226,9 +302,18 @@
       "Playing guitar"
     ],
     "languages": [
-      { "language": "English", "proficiency": "Native" },
-      { "language": "Spanish", "proficiency": "Fluent" },
-      { "language": "French", "proficiency": "Intermediate" }
+      {
+        "language": "English",
+        "proficiency": "Native"
+      },
+      {
+        "language": "Spanish",
+        "proficiency": "Fluent"
+      },
+      {
+        "language": "French",
+        "proficiency": "Intermediate"
+      }
     ]
   },
   "contact": {
@@ -237,9 +322,9 @@
     "location": "San Francisco, CA",
     "availability": "Open to freelance and full-time opportunities",
     "socialLinks": {
-      "github": "https://github.com/johndoe",
-      "linkedin": "https://linkedin.com/in/johndoe",
-      "twitter": "https://twitter.com/johndoe"
+      "github": "https://example.com/johndoe",
+      "linkedin": "https://example.com/",
+      "twitter": "https://example.com/"
     }
   }
 }
