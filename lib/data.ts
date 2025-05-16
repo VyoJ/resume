@@ -1,0 +1,412 @@
+import fs from "fs/promises";
+import path from "path";
+
+// Define types for our data structure
+export type ProfileData = {
+  name: string;
+  title: string;
+  summary: string;
+  location: string;
+  email: string;
+  phone: string;
+  website: string;
+  photo: string;
+  socialLinks: {
+    github?: string;
+    linkedin?: string;
+    twitter?: string;
+    other?: { name: string; url: string }[];
+  };
+};
+
+export type ExperienceData = {
+  company: string;
+  position: string;
+  location: string;
+  startDate: string;
+  endDate: string | null;
+  description: string;
+  achievements: string[];
+  technologies: string[];
+}[];
+
+export type EducationData = {
+  institution: string;
+  degree: string;
+  field: string;
+  location: string;
+  startDate: string;
+  endDate: string;
+  gpa?: string;
+  achievements?: string[];
+}[];
+
+export type SkillData = {
+  category: string;
+  items: string[];
+}[];
+
+export type ProjectData = {
+  title: string;
+  description: string;
+  technologies: string[];
+  link?: string;
+  github?: string;
+  image?: string;
+  featured: boolean;
+}[];
+
+export type CertificationData = {
+  name: string;
+  issuer: string;
+  date: string;
+  link?: string;
+}[];
+
+export type PublicationData = {
+  title: string;
+  publisher: string;
+  date: string;
+  link?: string;
+  description?: string;
+}[];
+
+export type PersonalData = {
+  interests: string[];
+  languages: { language: string; proficiency: string }[];
+};
+
+export type ContactData = {
+  email: string;
+  phone?: string;
+  location: string;
+  availability: string;
+  socialLinks: {
+    github?: string;
+    linkedin?: string;
+    twitter?: string;
+    other?: { name: string; url: string }[];
+  };
+};
+
+export type PortfolioData = {
+  profile: ProfileData;
+  experience: ExperienceData;
+  education: EducationData;
+  skills: SkillData;
+  projects: ProjectData;
+  certifications: CertificationData;
+  publications: PublicationData;
+  personal: PersonalData;
+  contact: ContactData;
+};
+
+// Function to get data from JSON file
+export async function getData(): Promise<PortfolioData | null> {
+  try {
+    // In production, read from the JSON file
+    const filePath = path.join(process.cwd(), "data/portfolio.json");
+    const jsonData = await fs.readFile(filePath, "utf8");
+    return JSON.parse(jsonData) as PortfolioData;
+  } catch (error) {
+    // If file doesn't exist or in development, return sample data
+    console.warn("Using sample data as portfolio.json was not found");
+    return null;
+  }
+}
+
+// // Sample data for development and fallback
+// const sampleData: PortfolioData = {
+//   profile: {
+//     name: "John Doe",
+//     title: "Full Stack Developer",
+//     summary:
+//       "Experienced Full Stack Developer with 5+ years of expertise in building scalable web applications using React, Node.js, and modern cloud technologies. Passionate about creating elegant solutions to complex problems with a focus on performance and user experience.",
+//     location: "San Francisco, CA",
+//     email: "hello@johndoe.dev",
+//     phone: "+1 (555) 123-4567",
+//     website: "https://johndoe.dev",
+//     photo: "/placeholder.svg?height=300&width=300",
+//     socialLinks: {
+//       github: "https://github.com/johndoe",
+//       linkedin: "https://linkedin.com/in/johndoe",
+//       twitter: "https://twitter.com/johndoe",
+//     },
+//   },
+//   experience: [
+//     {
+//       company: "Tech Innovations Inc.",
+//       position: "Senior Frontend Developer",
+//       location: "San Francisco, CA",
+//       startDate: "2021-06",
+//       endDate: null,
+//       description:
+//         "Lead the frontend development team in building and maintaining a complex SaaS platform.",
+//       achievements: [
+//         "Reduced page load time by 40% through code optimization and lazy loading strategies",
+//         "Implemented a component library that increased development speed by 30%",
+//         "Led a team of 5 developers to successfully deliver 3 major product releases",
+//         "Mentored junior developers and conducted code reviews to maintain code quality",
+//       ],
+//       technologies: [
+//         "React",
+//         "TypeScript",
+//         "Next.js",
+//         "GraphQL",
+//         "Tailwind CSS",
+//       ],
+//     },
+//     {
+//       company: "Digital Solutions Ltd.",
+//       position: "Full Stack Developer",
+//       location: "Boston, MA",
+//       startDate: "2019-03",
+//       endDate: "2021-05",
+//       description:
+//         "Developed and maintained multiple client projects, working on both frontend and backend systems.",
+//       achievements: [
+//         "Built and deployed 12+ web applications for clients across various industries",
+//         "Implemented CI/CD pipelines that reduced deployment time by 50%",
+//         "Designed and developed RESTful APIs consumed by mobile and web applications",
+//         "Collaborated with designers and product managers to deliver high-quality user experiences",
+//       ],
+//       technologies: ["React", "Node.js", "Express", "MongoDB", "AWS"],
+//     },
+//     {
+//       company: "WebCraft Agency",
+//       position: "Junior Web Developer",
+//       location: "Chicago, IL",
+//       startDate: "2017-09",
+//       endDate: "2019-02",
+//       description:
+//         "Started as an intern and grew into a full-time role, assisting in building responsive websites.",
+//       achievements: [
+//         "Developed and maintained 20+ client websites using modern web technologies",
+//         "Implemented responsive designs that improved mobile user engagement by 25%",
+//         "Assisted senior developers in troubleshooting and debugging complex issues",
+//         "Participated in client meetings to gather requirements and present solutions",
+//       ],
+//       technologies: ["JavaScript", "HTML", "CSS", "jQuery", "PHP"],
+//     },
+//   ],
+//   education: [
+//     {
+//       institution: "Massachusetts Institute of Technology",
+//       degree: "Master of Science",
+//       field: "Computer Science",
+//       location: "Cambridge, MA",
+//       startDate: "2015-09",
+//       endDate: "2017-05",
+//       gpa: "3.8/4.0",
+//       achievements: [
+//         "Thesis: 'Optimizing React Applications for Performance'",
+//         "Teaching Assistant for Web Development course",
+//         "Member of the Computer Science Student Association",
+//       ],
+//     },
+//     {
+//       institution: "University of California, Berkeley",
+//       degree: "Bachelor of Science",
+//       field: "Computer Engineering",
+//       location: "Berkeley, CA",
+//       startDate: "2011-09",
+//       endDate: "2015-05",
+//       gpa: "3.7/4.0",
+//       achievements: [
+//         "Dean's List for 6 consecutive semesters",
+//         "Capstone Project: 'Smart Home Automation System'",
+//         "Participated in ACM Programming Contest",
+//       ],
+//     },
+//   ],
+//   skills: [
+//     {
+//       category: "Frontend",
+//       items: [
+//         "React",
+//         "Next.js",
+//         "TypeScript",
+//         "JavaScript",
+//         "HTML5",
+//         "CSS3",
+//         "Tailwind CSS",
+//         "Redux",
+//         "Framer Motion",
+//       ],
+//     },
+//     {
+//       category: "Backend",
+//       items: [
+//         "Node.js",
+//         "Express",
+//         "Python",
+//         "Django",
+//         "RESTful APIs",
+//         "GraphQL",
+//         "Serverless",
+//       ],
+//     },
+//     {
+//       category: "Database",
+//       items: ["MongoDB", "PostgreSQL", "MySQL", "Firebase", "Redis", "Prisma"],
+//     },
+//     {
+//       category: "DevOps",
+//       items: [
+//         "Docker",
+//         "Kubernetes",
+//         "CI/CD",
+//         "AWS",
+//         "Vercel",
+//         "Netlify",
+//         "GitHub Actions",
+//       ],
+//     },
+//     {
+//       category: "Tools",
+//       items: [
+//         "Git",
+//         "GitHub",
+//         "VS Code",
+//         "Figma",
+//         "Postman",
+//         "Jest",
+//         "Cypress",
+//         "Storybook",
+//       ],
+//     },
+//   ],
+//   projects: [
+//     {
+//       title: "E-Commerce Platform",
+//       description:
+//         "A full-featured e-commerce platform with product management, cart functionality, and payment processing.",
+//       technologies: [
+//         "Next.js",
+//         "TypeScript",
+//         "Stripe",
+//         "Tailwind CSS",
+//         "Prisma",
+//         "PostgreSQL",
+//       ],
+//       link: "https://ecommerce-example.com",
+//       github: "https://github.com/johndoe/ecommerce",
+//       image: "/placeholder.svg?height=200&width=300",
+//       featured: true,
+//     },
+//     {
+//       title: "Task Management App",
+//       description:
+//         "A collaborative task management application with real-time updates and team collaboration features.",
+//       technologies: ["React", "Firebase", "Material UI", "Redux"],
+//       link: "https://taskapp-example.com",
+//       github: "https://github.com/johndoe/taskapp",
+//       image: "/placeholder.svg?height=200&width=300",
+//       featured: true,
+//     },
+//     {
+//       title: "Finance Dashboard",
+//       description:
+//         "An interactive dashboard for tracking personal finances, with data visualization and budget planning tools.",
+//       technologies: ["React", "D3.js", "Node.js", "Express", "MongoDB"],
+//       link: "https://finance-example.com",
+//       github: "https://github.com/johndoe/finance-dashboard",
+//       image: "/placeholder.svg?height=200&width=300",
+//       featured: true,
+//     },
+//     {
+//       title: "Weather App",
+//       description:
+//         "A weather application that provides real-time weather data and forecasts for locations worldwide.",
+//       technologies: ["React", "OpenWeather API", "Styled Components"],
+//       github: "https://github.com/johndoe/weather-app",
+//       featured: false,
+//     },
+//     {
+//       title: "Portfolio Website",
+//       description:
+//         "A personal portfolio website showcasing my projects and skills.",
+//       technologies: ["Next.js", "Tailwind CSS", "Framer Motion"],
+//       link: "https://johndoe.dev",
+//       github: "https://github.com/johndoe/portfolio",
+//       featured: false,
+//     },
+//   ],
+//   certifications: [
+//     {
+//       name: "AWS Certified Solutions Architect",
+//       issuer: "Amazon Web Services",
+//       date: "2022-05",
+//       link: "https://aws.amazon.com/certification/",
+//     },
+//     {
+//       name: "Google Cloud Professional Developer",
+//       issuer: "Google Cloud",
+//       date: "2021-11",
+//       link: "https://cloud.google.com/certification/cloud-developer",
+//     },
+//     {
+//       name: "MongoDB Certified Developer",
+//       issuer: "MongoDB",
+//       date: "2020-08",
+//       link: "https://university.mongodb.com/certification",
+//     },
+//     {
+//       name: "React Advanced Concepts",
+//       issuer: "Frontend Masters",
+//       date: "2019-12",
+//       link: "https://frontendmasters.com",
+//     },
+//   ],
+//   publications: [
+//     {
+//       title: "Optimizing React Applications for Performance",
+//       publisher: "Medium",
+//       date: "2022-07",
+//       link: "https://medium.com/article1",
+//       description:
+//         "A comprehensive guide to optimizing React applications for better performance and user experience.",
+//     },
+//     {
+//       title: "Building Scalable APIs with Node.js and Express",
+//       publisher: "Dev.to",
+//       date: "2021-11",
+//       link: "https://dev.to/article2",
+//       description:
+//         "Best practices for building scalable and maintainable APIs using Node.js and Express.",
+//     },
+//     {
+//       title: "Introduction to TypeScript for JavaScript Developers",
+//       publisher: "Hashnode",
+//       date: "2021-03",
+//       link: "https://hashnode.com/article3",
+//       description:
+//         "A beginner-friendly guide to TypeScript for JavaScript developers.",
+//     },
+//   ],
+//   personal: {
+//     interests: [
+//       "Open source contribution",
+//       "Tech meetups and conferences",
+//       "Hiking and outdoor activities",
+//       "Photography",
+//       "Playing guitar",
+//     ],
+//     languages: [
+//       { language: "English", proficiency: "Native" },
+//       { language: "Spanish", proficiency: "Fluent" },
+//       { language: "French", proficiency: "Intermediate" },
+//     ],
+//   },
+//   contact: {
+//     email: "hello@johndoe.dev",
+//     phone: "+1 (555) 123-4567",
+//     location: "San Francisco, CA",
+//     availability: "Open to freelance and full-time opportunities",
+//     socialLinks: {
+//       github: "https://github.com/johndoe",
+//       linkedin: "https://linkedin.com/in/johndoe",
+//       twitter: "https://twitter.com/johndoe",
+//     },
+//   },
+// };
